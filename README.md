@@ -178,32 +178,20 @@ In practical terms, Lee et al. (2020) and Gu et al. (2021) have independently co
 
 ### Error Analysis
 
-The confusion matrix analysis revealed distinct error patterns across models:
+Based on our detailed confusion matrix analysis, we observed distinct error patterns across the different models:
 
-#### BERT Confusion Matrix
-![BERT Confusion Matrix](https://github.com/user/repo/static/images/BERT_confusion_matrix.png)
-
-BERT struggles with distinguishing between similar conditions, particularly with ALS (10 cases misclassified as Scoliosis) and Parkinson's Disease. This likely stems from its general-domain pretraining, which lacks medical specificity.
-
-#### BioBERT Confusion Matrix
-![BioBERT Confusion Matrix](https://github.com/user/repo/static/images/BioBERT_confusion_matrix.png)
-
-BioBERT performs better, though it still shows weakness in specific areas - notably with 5 cases of OCD misclassified as ALS. The biomedical pretraining helps, but some domain gaps remain.
-
-#### ClinicalBERT Confusion Matrix
-![ClinicalBERT Confusion Matrix](https://github.com/user/repo/static/images/ClinicalBERT_confusion_matrix.png)
-
-ClinicalBERT excels at ALS detection (73 correct cases) but struggles with Parkinson's Disease, where 6 cases went to ALS and 4 to Dementia. Its clinical notes pretraining shows clear benefits for certain conditions.
+| Model | Strengths | Common Errors | Notable Observations |
+|-------|-----------|---------------|----------------------|
+| BERT | Good baseline performance | ALS misclassified as Scoliosis (10 cases) | Most errors across all conditions |
+| BioBERT | Strong overall improvement | OCD misclassified as ALS (5 cases) | Better handling of medical terminology |
+| ClinicalBERT | Excellent ALS detection (73 correct cases) | Parkinson's misclassified as ALS (6) and Dementia (4) | Clinical pretraining benefits specific conditions |
+| PubMedBERT | Best overall accuracy | Minimal errors across all categories | Superior handling of specialized terminology |
+| Ensemble | Leverages strengths of multiple models | Parkinson's misclassified as Dementia (4 cases) | Slightly worse than PubMedBERT on certain conditions |
 
 #### PubMedBERT Confusion Matrix
-![PubMedBERT Confusion Matrix](https://github.com/user/repo/static/images/PubMedBERT_confusion_matrix.png)
+![PubMedBERT Confusion Matrix](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/PubMedBERT%20Confusion%20Matrix.png)
 
-PubMedBERT delivers the strongest overall performance with minimal misclassifications across all categories. The few errors primarily occur between Parkinson's Disease and related neurological conditions.
-
-#### Ensemble Model Confusion Matrix
-![Ensemble Confusion Matrix](https://github.com/user/repo/static/images/Ensemble_confusion_matrix.png)
-
-The ensemble approach leverages the strengths of multiple models but still shows a specific weakness in Parkinson's Disease classification (4 cases misclassified as Dementia).
+As shown in the PubMedBERT confusion matrix (our best-performing model), the classification accuracy is exceptional across all medical conditions, with only minimal misclassifications between related neurological disorders.
 
 Most misclassifications across all models occur between:
 - **Parkinson's Disease** and **Obsessive Compulsive Disorder**
@@ -214,29 +202,23 @@ These patterns likely reflect genuine medical overlaps, as these conditions shar
 
 ### Performance Comparison Across Models
 
-![Model Comparison](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/model_performance_comparison.png)
+### Performance Comparison Across Models
 
-### Distribution of Medical Conditions
+![Performance Comparison across BERT transformer model](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/Performance%20Comparison%20across%20BERT%20transformer%20model.png)
 
-The dataset contains a balanced distribution of the five medical conditions being classified:
+The chart above shows the comparative performance metrics (Accuracy, Precision, Recall, and F1 Score) across all tested models. PubMedBERT consistently outperforms other models across all metrics, while the standard BERT model shows the lowest performance.
 
-![Medical Conditions Distribution](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/medical_conditions_distribution.png)
+### Training Time Comparison
 
-This balance helps ensure that the model training is not biased toward any particular condition and contributes to the robust performance across all categories.
+![Training Time Comparison across BERT transformer models](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/Training%20Time%20Comparison%20across%20BERT%20transformer%20models.png)
 
-### Traditional ML Model: Linear SVM with TF-IDF
+While transformer models achieve superior performance, they require significant computational resources. The training time comparison highlights the trade-off between model complexity and training efficiency. The Linear SVM + TF-IDF model (not shown in the chart) trains in under 1 second, making it a practical option for rapid prototyping despite its slightly lower accuracy.
 
-While transformer-based models showed superior performance, it's worth highlighting that traditional machine learning approaches also delivered strong results. The Linear SVM with TF-IDF vectorization achieved an impressive **91.5% overall accuracy**, making it a viable option when computational resources are limited.
+### Traditional ML Approach
 
-![Linear SVM + TF-IDF Confusion Matrix](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/svm_tfidf_confusion_matrix.png)
+![Linear SVM + TF IDF](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/Linear%20SVM%20%2B%20TF%20IDF.png)
 
-The confusion matrix shows particularly strong performance for ALS (95.9% accuracy) and Dementia (94.6% accuracy), with slightly lower but still strong results for Obsessive Compulsive Disorder (91.5%), Scoliosis (92.5%), and Parkinson's Disease (81.8%).
-
-The most common misclassification for the SVM model was between Parkinson's Disease and Dementia (7.6% of Parkinson's cases were classified as Dementia), which aligns with the error patterns observed in the transformer models and likely reflects genuine medical terminology overlap between these conditions.
-
-Given that the Linear SVM model trains in under 1 second (compared to the hours required for transformer models) while still achieving over 91% accuracy, it represents an excellent option for rapid prototyping or resource-constrained environments.
-
----
+The Linear SVM with TF-IDF vectorization achieved 91.5% overall accuracy, making it a viable alternative when computational resources are limited. The confusion matrix shows particularly strong performance for ALS (95.9% accuracy) and Dementia (94.6% accuracy).
 
 ## Model Deployment
 
@@ -305,13 +287,18 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Download model files (due to size constraints, models are hosted on Google Drive):
+4. Download model files:
 ```bash
-# Use the provided script to download the models
+# Models are hosted on Google Drive due to size constraints
 python src/utils/download_models.py
 ```
 
 ## Usage
+
+### Using the Google Colab Demo
+
+For quick testing without installation, use our Google Colab demo:
+[Clinical Trials Classification Demo](https://colab.research.google.com/drive/1x8RoDdwDJsuxPdVq2xjHXMgf5ovUZhYW#scrollTo=5b41e967)
 
 ### Training a Model
 
@@ -323,7 +310,9 @@ from src.data.loader import load_dataset
 X_train, X_test, y_train, y_test = load_dataset('data/trials.csv')
 
 # Initialize and train the model
-model = TransformerClassifier(model_name='microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext')
+model = TransformerClassifier(
+    model_name='microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext'
+)
 model.fit(X_train, y_train)
 
 # Evaluate
@@ -347,22 +336,6 @@ prediction = predict_condition(description)
 print(f"Predicted condition: {prediction['prediction']}")
 print(f"Confidence: {prediction['confidence']:.2f}")
 ```
-
-## Google Colab Deployment
-
-To make this project accessible without dealing with large model files, I've created a Google Colab notebook:
-
-[Clinical Trials Classification Demo](https://colab.research.google.com/drive/1x8RoDdwDJsuxPdVq2xjHXMgf5ovUZhYW#scrollTo=5b41e967)
-
-**Why Colab?** Transformer models are massive - PubMedBERT alone is ~1.2GB. Colab handles all dependencies and GPU requirements automatically, making it practical for most users to test the system.
-
-The notebook provides:
-- Interactive text classification interface
-- Real-time prediction visualization 
-- Sample texts for immediate testing
-- Code explanations for those interested in implementation details
-
-Try classifying your own medical text samples or use the provided examples to see how effectively the model distinguishes between conditions.
 
 ---
 
