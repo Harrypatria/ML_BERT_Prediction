@@ -5,10 +5,32 @@
 ![Transformers](https://img.shields.io/badge/Transformers-4.12+-green.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
 
-## Demo
+## Quick Demo
 
-[![ML BERT Prediction Demo](https://img.youtube.com/vi/ExXTu0rgmX0/maxresdefault.jpg)](https://www.youtube.com/watch?v=ExXTu0rgmX0 "ML BERT Prediction Demo - Click to Watch!")
+<p align="center">
+  <a href="https://colab.research.google.com/drive/1x8RoDdwDJsuxPdVq2xjHXMgf5ovUZhYW#scrollTo=5b41e967">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+  </a>
+</p>
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=ExXTu0rgmX0">
+    <img src="https://img.youtube.com/vi/ExXTu0rgmX0/maxresdefault.jpg" alt="ML BERT Prediction Demo" width="600"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>🔬 Clinical Trials Classification Demo 🔬</b><br>
+  <a href="https://colab.research.google.com/drive/1x8RoDdwDJsuxPdVq2xjHXMgf5ovUZhYW#scrollTo=5b41e967">
+    <img src="https://img.shields.io/badge/Try%20It-Google%20Colab-orange?style=flat-square&logo=google-colab" alt="Try It on Google Colab"/>
+  </a>
+  <a href="https://github.com/Harrypatria/ML_BERT_Prediction">
+    <img src="https://img.shields.io/badge/View%20Code-GitHub-blue?style=flat-square&logo=github" alt="View Code on GitHub"/>
+  </a>
+  <a href="https://www.youtube.com/watch?v=ExXTu0rgmX0">
+    <img src="https://img.shields.io/badge/Watch-Demo%20Video-red?style=flat-square&logo=youtube" alt="Watch Demo Video"/>
+  </a>
+</p>
 *Click the thumbnail above to watch the full demonstration video on YouTube*
 *Click the image above to watch the demo video on YouTube*
 
@@ -29,9 +51,6 @@ PubMedBERT demonstrated exceptional performance (accuracy=94.9%, precision=95.0%
 | PubMedBERT         | 0.9489   | 0.9498    | 0.9489  | 0.9488   | 5954.21           |
 
 ![PubMedBERT Confusion Matrix](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/PubMedBERT%20Confusion%20Matrix.png)
-
-For quick testing without installation, use our Google Colab demo:
-[Clinical Trials Classification Demo](https://colab.research.google.com/drive/1x8RoDdwDJsuxPdVq2xjHXMgf5ovUZhYW#scrollTo=5b41e967)
 
 ## 📋 Table of Contents
 - [Problem Statement](#problem-statement)
