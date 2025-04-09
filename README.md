@@ -386,6 +386,7 @@ However, several challenges remain. The computational demands of transformer mod
 Future work should explore several promising directions: (1) implementation of GAN-BERT approaches to improve performance on minority classes; (2) development of distilled models that maintain performance while reducing computational requirements; (3) integration of Longformer or BigBird architectures to better handle extended documents; and (4) incorporation of explainability techniques to enhance interpretability for clinical stakeholders.
 Our system demonstrates immediate practical utility for improving clinical trial searchability, enhancing patient-trial matching, and facilitating meta-analysis of research trends across medical conditions. The performance-efficiency tradeoffs identified provide valuable guidance for implementation across diverse computational environments, from resource-rich research institutions to limited-resource clinical settings.
 
+<div align="center">
 ## 🌟 Support This Project
 **Follow me on GitHub**: [![GitHub Follow](https://img.shields.io/github/followers/Harrypatria?style=social)](https://github.com/Harrypatria?tab=followers)
 **Star this repository**: [![GitHub Star](https://img.shields.io/github/stars/Harrypatria/SQLite_Advanced_Tutorial_Google_Colab?style=social)](https://github.com/Harrypatria/SQLite_Advanced_Tutorial_Google_Colab/stargazers)
