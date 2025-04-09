@@ -8,12 +8,6 @@
 ## Quick Demo
 
 <p align="center">
-  <a href="https://colab.research.google.com/drive/1x8RoDdwDJsuxPdVq2xjHXMgf5ovUZhYW#scrollTo=5b41e967">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-  </a>
-</p>
-
-<p align="center">
   <a href="https://www.youtube.com/watch?v=ExXTu0rgmX0">
     <img src="https://img.youtube.com/vi/ExXTu0rgmX0/maxresdefault.jpg" alt="ML BERT Prediction Demo" width="600"/>
   </a>
@@ -31,17 +25,14 @@
     <img src="https://img.shields.io/badge/Watch-Demo%20Video-red?style=flat-square&logo=youtube" alt="Watch Demo Video"/>
   </a>
 </p>
-*Click the thumbnail above to watch the full demonstration video on YouTube*
-*Click the image above to watch the demo video on YouTube*
+
+## Executive Summary
 
 This repository contains code for an NLP-based classification system that categorizes clinical trial descriptions into different medical conditions. The system leverages both traditional ML approaches and state-of-the-art transformer models to achieve high accuracy in categorizing medical texts.
-Executive Summary
-A high-performance NLP system that classifies clinical trial descriptions into five medical conditions with 94.9% accuracy. Our PubMedBERT-based model outperforms other approaches by leveraging domain-specific medical knowledge. Perfect for researchers and healthcare professionals seeking to improve trial searchability, patient matching, and research trend analysis.
+
+Our high-performance NLP system classifies clinical trial descriptions into five medical conditions with 94.9% accuracy. The PubMedBERT-based model outperforms other approaches by leveraging domain-specific medical knowledge. This solution is perfect for researchers and healthcare professionals seeking to improve trial searchability, patient matching, and research trend analysis.
 
 ### Model Performance Comparison
-
-Results
-PubMedBERT demonstrated exceptional performance (accuracy=94.9%, precision=95.0%, recall=94.9%, F1=94.9%), significantly outperforming other transformer variants including BioBERT (accuracy=94.0%), ClinicalBERT (accuracy=91.2%), and vanilla BERT (accuracy=87.8%). This performance advantage persisted across all evaluated conditions, with particularly strong results for ALS (F1=97.1%) and Dementia (F1=95.8%). Traditional approaches showed surprisingly competitive results, with Linear SVM using TF-IDF features achieving 91.5% accuracy while requiring orders of magnitude less computational resources (training time<1s vs. PubMedBERT's 5,954s).
 
 | Model              | Accuracy | Precision | Recall  | F1 Score | Training Time (s) |
 |--------------------|----------|-----------|---------|----------|-------------------|
@@ -65,8 +56,6 @@ PubMedBERT demonstrated exceptional performance (accuracy=94.9%, precision=95.0%
 - [Contributors](#contributors)
 - [References](#references)
 
----
-
 ## Problem Statement
 
 Clinical trial descriptions contain rich medical information but are typically unstructured. Automatically classifying these descriptions into specific medical conditions can facilitate:
@@ -75,8 +64,6 @@ Clinical trial descriptions contain rich medical information but are typically u
 - Better understanding of research trends across different conditions
 
 This project aims to develop a robust classifier that categorizes clinical trial descriptions into five medical conditions: **ALS**, **Dementia**, **Obsessive Compulsive Disorder**, **Parkinson's Disease**, and **Scoliosis**.
-
----
 
 ## Dataset
 
@@ -111,8 +98,6 @@ The dataset consists of **1,759 clinical trial descriptions** with the following
 - Maximum count: **3,297 words**
 
 The dataset is well-balanced across all five medical conditions, which is beneficial for building a robust classifier. The variance in text length suggests the need for effective text normalization techniques.
-
----
 
 ## Methodology
 
@@ -167,8 +152,6 @@ Models were evaluated using:
 ### 6. Ensemble Methods
 
 An ensemble approach was implemented by combining predictions from the best-performing models through majority voting.
-
----
 
 ## Results
 
@@ -265,8 +248,6 @@ These patterns likely reflect genuine medical overlaps, as these conditions shar
 
 ### Performance Comparison Across Models
 
-### Performance Comparison Across Models
-
 ![Performance Comparison across BERT transformer model](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/Performance%20Comparison%20across%20BERT%20transformer%20model.png)
 
 The chart above shows the comparative performance metrics (Accuracy, Precision, Recall, and F1 Score) across all tested models. PubMedBERT consistently outperforms other models across all metrics, while the standard BERT model shows the lowest performance.
@@ -288,8 +269,6 @@ The Linear SVM with TF-IDF vectorization achieved 91.5% overall accuracy, making
 The PubMedBERT model has been deployed as an API service that accepts clinical trial text and returns the predicted medical condition along with confidence scores. The model files are available in the Google Drive link provided below due to their large size.
 
 [PubMedBERT Model Files (Google Drive)](https://drive.google.com/drive/u/0/folders/1bzKQJnl2POgdvl8EtiCxo402IIo7WYSJ)
-
----
 
 ## Project Structure
 
@@ -396,24 +375,27 @@ print(f"Predicted condition: {prediction['prediction']}")
 print(f"Confidence: {prediction['confidence']:.2f}")
 ```
 
-<div align="left">
+## Discussion
 
-### Discussion
 The findings demonstrate that domain-specific transformer models offer substantial advantages for clinical text classification, with PubMedBERT's specialized medical vocabulary and biomedical pretraining providing critical performance improvements. The model's superior handling of context-dependent medical terminology and its ability to capture long-range dependencies between condition-specific terms explain its performance advantages over general-domain transformers.
+
 However, several challenges remain. The computational demands of transformer models present implementation barriers in many clinical settings. The token limitation inherent to BERT architectures creates difficulties for comprehensive analysis of longer trial descriptions. Furthermore, the interpretability limitations of transformer models may reduce their utility in clinical contexts where explanation of classification decisions is necessary for practitioner trust and regulatory compliance.
 
-Future work should explore several promising directions: (1) implementation of GAN-BERT approaches to improve performance on minority classes; (2) development of distilled models that maintain performance while reducing computational requirements; (3) integration of Longformer or BigBird architectures to better handle extended documents; and (4) incorporation of explainability techniques to enhance interpretability for clinical stakeholders.
+Future work should explore several promising directions: 
+1. Implementation of GAN-BERT approaches to improve performance on minority classes
+2. Development of distilled models that maintain performance while reducing computational requirements
+3. Integration of Longformer or BigBird architectures to better handle extended documents
+4. Incorporation of explainability techniques to enhance interpretability for clinical stakeholders
+
 Our system demonstrates immediate practical utility for improving clinical trial searchability, enhancing patient-trial matching, and facilitating meta-analysis of research trends across medical conditions. The performance-efficiency tradeoffs identified provide valuable guidance for implementation across diverse computational environments, from resource-rich research institutions to limited-resource clinical settings.
 
-<div align="center">
 ## 🌟 Support This Project
-**Follow me on GitHub**: [![GitHub Follow](https://img.shields.io/github/followers/Harrypatria?style=social)](https://github.com/Harrypatria?tab=followers)
-**Star this repository**: [![GitHub Star](https://img.shields.io/github/stars/Harrypatria/SQLite_Advanced_Tutorial_Google_Colab?style=social)](https://github.com/Harrypatria/SQLite_Advanced_Tutorial_Google_Colab/stargazers)
-**Connect on LinkedIn**: [![LinkedIn Follow](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harry-patria/)
 
-Click the buttons above to show your support!
-
-</div>
+<p align="center">
+  <b>Follow me on GitHub</b>: <a href="https://github.com/Harrypatria?tab=followers"><img src="https://img.shields.io/github/followers/Harrypatria?style=social" alt="GitHub Follow"></a><br>
+  <b>Star this repository</b>: <a href="https://github.com/Harrypatria/ML_BERT_Prediction/stargazers"><img src="https://img.shields.io/github/stars/Harrypatria/ML_BERT_Prediction?style=social" alt="GitHub Star"></a><br>
+  <b>Connect on LinkedIn</b>: <a href="https://www.linkedin.com/in/harry-patria/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Follow"></a>
+</p>
 
 ## References
 
