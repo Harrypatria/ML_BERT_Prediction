@@ -7,8 +7,9 @@
 
 ## Demo
 
-[![ML BERT Prediction Demo](https://img.youtube.com/vi/ExXTu0rgmX0/0.jpg)](https://www.youtube.com/watch?v=ExXTu0rgmX0)
+[![ML BERT Prediction Demo](https://img.youtube.com/vi/ExXTu0rgmX0/maxresdefault.jpg)](https://www.youtube.com/watch?v=ExXTu0rgmX0 "ML BERT Prediction Demo - Click to Watch!")
 
+*Click the thumbnail above to watch the full demonstration video on YouTube*
 *Click the image above to watch the demo video on YouTube*
 
 This repository contains code for an NLP-based classification system that categorizes clinical trial descriptions into different medical conditions. The system leverages both traditional ML approaches and state-of-the-art transformer models to achieve high accuracy in categorizing medical texts.
