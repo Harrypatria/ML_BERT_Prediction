@@ -377,7 +377,7 @@ print(f"Predicted condition: {prediction['prediction']}")
 print(f"Confidence: {prediction['confidence']:.2f}")
 ```
 
-<div align="center">
+<div align="left">
 
 ### Discussion
 The findings demonstrate that domain-specific transformer models offer substantial advantages for clinical text classification, with PubMedBERT's specialized medical vocabulary and biomedical pretraining providing critical performance improvements. The model's superior handling of context-dependent medical terminology and its ability to capture long-range dependencies between condition-specific terms explain its performance advantages over general-domain transformers.
