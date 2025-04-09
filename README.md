@@ -6,7 +6,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
 
 Video Demo
-https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/demo_app.mp4
+[https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/demo_app.mp4](https://www.youtube.com/watch?v=ExXTu0rgmX0)
 
 This repository contains code for an NLP-based classification system that categorizes clinical trial descriptions into different medical conditions. The system leverages both traditional ML approaches and state-of-the-art transformer models to achieve high accuracy in categorizing medical texts.
 Executive Summary
