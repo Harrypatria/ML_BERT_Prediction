@@ -240,10 +240,6 @@ The PubMedBERT model has been deployed as an API service that accepts clinical t
 │   └── transformers/                   # Transformer-based models
 ├── notebooks/
 │   ├── 1_EDA.ipynb                     # Exploratory Data Analysis
-│   ├── 2_Preprocessing.ipynb           # Text preprocessing steps
-│   ├── 3_Traditional_Models.ipynb      # Training and evaluation of traditional ML models
-│   ├── 4_Transformer_Models.ipynb      # Training and evaluation of transformer models
-│   └── 5_Model_Comparison.ipynb        # Comparison of all models
 ├── src/
 │   ├── data/
 │   │   ├── __init__.py
@@ -337,11 +333,17 @@ print(f"Predicted condition: {prediction['prediction']}")
 print(f"Confidence: {prediction['confidence']:.2f}")
 ```
 
----
+<div align="center">
 
-## Contributors
 
-- Harry Patricia - [GitHub](https://github.com/Harrypatria)
+## 🌟 Support This Project
+**Follow me on GitHub**: [![GitHub Follow](https://img.shields.io/github/followers/Harrypatria?style=social)](https://github.com/Harrypatria?tab=followers)
+**Star this repository**: [![GitHub Star](https://img.shields.io/github/stars/Harrypatria/SQLite_Advanced_Tutorial_Google_Colab?style=social)](https://github.com/Harrypatria/SQLite_Advanced_Tutorial_Google_Colab/stargazers)
+**Connect on LinkedIn**: [![LinkedIn Follow](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harry-patria/)
+
+Click the buttons above to show your support!
+
+</div>
 
 ## References
 
