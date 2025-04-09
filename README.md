@@ -190,33 +190,33 @@ PubMedBERT achieved the highest performance metrics (F1 score: 0.9488) for sever
 
 ### Why PubMedBERT Outperforms Other Models: Mathematical and Theoretical Analysis
 
-#### 1. **Domain-specific Pretraining: Representation Space Optimization**
+#### 1. Domain-specific Pretraining: Representation Space Optimization
 
-PubMedBERT was trained on 14M+ biomedical papers (≈3.1B words), creating a specialized embedding space $\mathcal{E}_{\text{med}} \subset \mathbb{R}^d$ that aligns precisely with clinical terminology distribution $P_{\text{med}}(w)$. Unlike BioBERT, which used transfer learning from general domain BERT weights $\mathcal{W}_{\text{BERT}}$ → $\mathcal{W}_{\text{BioBERT}}$, PubMedBERT was trained from scratch:
+PubMedBERT was trained on 14M+ biomedical papers (≈3.1B words), creating a specialized embedding space $E_{med} \subset \mathbb{R}^d$ that aligns precisely with clinical terminology distribution $P_{med}(w)$. Unlike BioBERT, which used transfer learning from general domain BERT weights $W_{BERT} → W_{BioBERT}$, PubMedBERT was trained from scratch:
 
-$$\mathcal{L}_{\text{PubMedBERT}} = \mathbb{E}_{w \sim P_{\text{med}}(w)} \left[ -\log p(w_i | w_{i-k}, \ldots, w_{i-1}, w_{i+1}, \ldots, w_{i+k}) \right]$$
+$$L_{PubMedBERT} = \mathbb{E}_{w \sim P_{med}(w)} [-\log p(w_i | w_{i-k}, \ldots, w_{i-1}, w_{i+1}, \ldots, w_{i+k})]$$
 
 This approach mitigates negative transfer effects quantified as:
 
-$$\mathcal{T}(\mathcal{D}_{\text{source}} \to \mathcal{D}_{\text{target}}) = \frac{\sigma(\mathcal{D}_{\text{target}}|\mathcal{W}_{\text{source}})}{\sigma(\mathcal{D}_{\text{target}}|\mathcal{W}_{\text{random}})}$$
+$$T(D_{source} \to D_{target}) = \frac{\sigma(D_{target}|W_{source})}{\sigma(D_{target}|W_{random})}$$
 
-Where $\sigma$ represents model performance. Our experiments confirmed $\mathcal{T}(\mathcal{D}_{\text{general}} \to \mathcal{D}_{\text{med}}) < \mathcal{T}(\mathcal{D}_{\text{med}} \to \mathcal{D}_{\text{med}})$, with PubMedBERT achieving $\sigma_{\text{PubMedBERT}} = 94.9\%$ vs. $\sigma_{\text{BERT}} = 87.8\%$.
+Where $\sigma$ represents model performance. Our experiments confirmed $T(D_{general} \to D_{med}) < T(D_{med} \to D_{med})$, with PubMedBERT achieving $\sigma_{PubMedBERT} = 94.9\%$ vs. $\sigma_{BERT} = 87.8\%$.
 
-#### 2. **Vocabulary Alignment: Tokenization Efficiency**
+#### 2. Vocabulary Alignment: Tokenization Efficiency
 
-PubMedBERT employs a domain-optimized WordPiece tokenizer $\mathcal{T}_{\text{med}}$ with vocabulary $\mathcal{V}_{\text{med}}$ derived from medical literature. This reduces subword fragmentation entropy:
+PubMedBERT employs a domain-optimized WordPiece tokenizer $T_{med}$ with vocabulary $V_{med}$ derived from medical literature. This reduces subword fragmentation entropy:
 
-$$H(\mathcal{T}_{\text{model}}(w)) = -\sum_{t \in \mathcal{T}_{\text{model}}(w)} p(t) \log p(t)$$
+$$H(T_{model}(w)) = -\sum_{t \in T_{model}(w)} p(t) \log p(t)$$
 
 For medical terms, we observed:
-* $|\mathcal{T}_{\text{BERT}}(\text{"myasthenia gravis"})| = 4$ tokens → ["my", "##asth", "##enia", "gravis"]
-* $|\mathcal{T}_{\text{PubMedBERT}}(\text{"myasthenia gravis"})| = 1$ token → ["myasthenia_gravis"]
+* $|T_{BERT}(\text{"myasthenia gravis"})| = 4$ tokens → ["my", "##asth", "##enia", "gravis"]
+* $|T_{PubMedBERT}(\text{"myasthenia gravis"})| = 1$ token → ["myasthenia_gravis"]
 
 This tokenization advantage extends to downstream performance through reduced positional dilution factor $\rho$:
 
-$$\rho(w) = \frac{|\mathcal{T}_{\text{model}}(w)|}{|w|_{\text{orig}}}$$
+$$\rho(w) = \frac{|T_{model}(w)|}{|w|_{orig}}$$
 
-With $\rho_{\text{PubMedBERT}}(\mathcal{D}_{\text{med}}) = 1.06$ vs. $\rho_{\text{BERT}}(\mathcal{D}_{\text{med}}) = 1.64$
+With $\rho_{PubMedBERT}(D_{med}) = 1.06$ vs. $\rho_{BERT}(D_{med}) = 1.64$
 
 #### 3. **Representational Capacity: Enhanced Attention Mechanisms**
 
