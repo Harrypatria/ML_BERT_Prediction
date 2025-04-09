@@ -1,5 +1,17 @@
 # Clinical Trials Classification System
 
+Executive Summary
+A high-performance NLP system that classifies clinical trial descriptions into five medical conditions with 94.9% accuracy. Our PubMedBERT-based model outperforms other approaches by leveraging domain-specific medical knowledge. Perfect for researchers and healthcare professionals seeking to improve trial searchability, patient matching, and research trend analysis.
+
+### Model Performance Comparison
+
+| Model              | Accuracy | Precision | Recall  | F1 Score | Training Time (s) |
+|--------------------|----------|-----------|---------|----------|-------------------|
+| BERT               | 0.8778   | 0.8859    | 0.8778  | 0.8787   | 5987.03           |
+| BioBERT            | 0.9403   | 0.9416    | 0.9403  | 0.9404   | 5731.49           |
+| ClinicalBERT       | 0.9119   | 0.9205    | 0.9119  | 0.9131   | 5552.07           |
+| PubMedBERT         | 0.9489   | 0.9498    | 0.9489  | 0.9488   | 5954.21           |
+
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.9+-red.svg)
 ![Transformers](https://img.shields.io/badge/Transformers-4.12+-green.svg)
