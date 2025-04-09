@@ -1,5 +1,11 @@
 # Clinical Trials Classification System
 
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![PyTorch](https://img.shields.io/badge/PyTorch-1.9+-red.svg)
+![Transformers](https://img.shields.io/badge/Transformers-4.12+-green.svg)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
+
+This repository contains code for an NLP-based classification system that categorizes clinical trial descriptions into different medical conditions. The system leverages both traditional ML approaches and state-of-the-art transformer models to achieve high accuracy in categorizing medical texts.
 Executive Summary
 A high-performance NLP system that classifies clinical trial descriptions into five medical conditions with 94.9% accuracy. Our PubMedBERT-based model outperforms other approaches by leveraging domain-specific medical knowledge. Perfect for researchers and healthcare professionals seeking to improve trial searchability, patient matching, and research trend analysis.
 
@@ -12,12 +18,10 @@ A high-performance NLP system that classifies clinical trial descriptions into f
 | ClinicalBERT       | 0.9119   | 0.9205    | 0.9119  | 0.9131   | 5552.07           |
 | PubMedBERT         | 0.9489   | 0.9498    | 0.9489  | 0.9488   | 5954.21           |
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![PyTorch](https://img.shields.io/badge/PyTorch-1.9+-red.svg)
-![Transformers](https://img.shields.io/badge/Transformers-4.12+-green.svg)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
+![PubMedBERT Confusion Matrix](https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/static/images/PubMedBERT%20Confusion%20Matrix.png)
 
-This repository contains code for an NLP-based classification system that categorizes clinical trial descriptions into different medical conditions. The system leverages both traditional ML approaches and state-of-the-art transformer models to achieve high accuracy in categorizing medical texts.
+For quick testing without installation, use our Google Colab demo:
+[Clinical Trials Classification Demo](https://colab.research.google.com/drive/1x8RoDdwDJsuxPdVq2xjHXMgf5ovUZhYW#scrollTo=5b41e967)
 
 ## 📋 Table of Contents
 - [Problem Statement](#problem-statement)
