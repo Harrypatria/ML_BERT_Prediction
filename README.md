@@ -11,6 +11,9 @@ A high-performance NLP system that classifies clinical trial descriptions into f
 
 ### Model Performance Comparison
 
+Results
+PubMedBERT demonstrated exceptional performance (accuracy=94.9%, precision=95.0%, recall=94.9%, F1=94.9%), significantly outperforming other transformer variants including BioBERT (accuracy=94.0%), ClinicalBERT (accuracy=91.2%), and vanilla BERT (accuracy=87.8%). This performance advantage persisted across all evaluated conditions, with particularly strong results for ALS (F1=97.1%) and Dementia (F1=95.8%). Traditional approaches showed surprisingly competitive results, with Linear SVM using TF-IDF features achieving 91.5% accuracy while requiring orders of magnitude less computational resources (training time<1s vs. PubMedBERT's 5,954s).
+
 | Model              | Accuracy | Precision | Recall  | F1 Score | Training Time (s) |
 |--------------------|----------|-----------|---------|----------|-------------------|
 | BERT               | 0.8778   | 0.8859    | 0.8778  | 0.8787   | 5987.03           |
@@ -351,6 +354,11 @@ print(f"Confidence: {prediction['confidence']:.2f}")
 
 <div align="center">
 
+### Discussion
+The findings demonstrate that domain-specific transformer models offer substantial advantages for clinical text classification, with PubMedBERT's specialized medical vocabulary and biomedical pretraining providing critical performance improvements. The model's superior handling of context-dependent medical terminology and its ability to capture long-range dependencies between condition-specific terms explain its performance advantages over general-domain transformers.
+However, several challenges remain. The computational demands of transformer models present implementation barriers in many clinical settings. The token limitation inherent to BERT architectures creates difficulties for comprehensive analysis of longer trial descriptions. Furthermore, the interpretability limitations of transformer models may reduce their utility in clinical contexts where explanation of classification decisions is necessary for practitioner trust and regulatory compliance.
+Future work should explore several promising directions: (1) implementation of GAN-BERT approaches to improve performance on minority classes; (2) development of distilled models that maintain performance while reducing computational requirements; (3) integration of Longformer or BigBird architectures to better handle extended documents; and (4) incorporation of explainability techniques to enhance interpretability for clinical stakeholders.
+Our system demonstrates immediate practical utility for improving clinical trial searchability, enhancing patient-trial matching, and facilitating meta-analysis of research trends across medical conditions. The performance-efficiency tradeoffs identified provide valuable guidance for implementation across diverse computational environments, from resource-rich research institutions to limited-resource clinical settings.
 
 ## 🌟 Support This Project
 **Follow me on GitHub**: [![GitHub Follow](https://img.shields.io/github/followers/Harrypatria?style=social)](https://github.com/Harrypatria?tab=followers)
