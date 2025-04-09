@@ -5,8 +5,11 @@
 ![Transformers](https://img.shields.io/badge/Transformers-4.12+-green.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
 
-Video Demo
-[https://github.com/Harrypatria/ML_BERT_Prediction/blob/main/demo_app.mp4](https://www.youtube.com/watch?v=ExXTu0rgmX0)
+## Demo
+
+[![ML BERT Prediction Demo](https://img.youtube.com/vi/ExXTu0rgmX0/0.jpg)](https://www.youtube.com/watch?v=ExXTu0rgmX0)
+
+*Click the image above to watch the demo video on YouTube*
 
 This repository contains code for an NLP-based classification system that categorizes clinical trial descriptions into different medical conditions. The system leverages both traditional ML approaches and state-of-the-art transformer models to achieve high accuracy in categorizing medical texts.
 Executive Summary
