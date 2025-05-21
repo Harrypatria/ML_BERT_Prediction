@@ -458,13 +458,19 @@ Future work should explore several promising directions:
 
 Our system demonstrates immediate practical utility for improving clinical trial searchability, enhancing patient-trial matching, and facilitating meta-analysis of research trends across medical conditions. The performance-efficiency tradeoffs identified provide valuable guidance for implementation across diverse computational environments, from resource-rich research institutions to limited-resource clinical settings.
 
-## 🌟 Support This Project
+---
 
-<p align="center">
-  <b>Follow me on GitHub</b>: <a href="https://github.com/Harrypatria?tab=followers"><img src="https://img.shields.io/github/followers/Harrypatria?style=social" alt="GitHub Follow"></a><br>
-  <b>Star this repository</b>: <a href="https://github.com/Harrypatria/ML_BERT_Prediction/stargazers"><img src="https://img.shields.io/github/stars/Harrypatria/ML_BERT_Prediction?style=social" alt="GitHub Star"></a><br>
-  <b>Connect on LinkedIn</b>: <a href="https://www.linkedin.com/in/harry-patria/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Follow"></a>
-</p>
+<div align="center">
+*Remember: Every expert was once a beginner. Your programming journey is unique, and we're here to support you every step of the way.*
+
+## 🌟 Support This Project
+**Follow me on GitHub**: [![GitHub Follow](https://img.shields.io/github/followers/Harrypatria?style=social)](https://github.com/Harrypatria?tab=followers)
+**Star this repository**: [![GitHub Star](https://img.shields.io/github/stars/Harrypatria/Basic-to-Advanced-Tutorial-of-Network-Analytics-with-NetworkX?style=social)](https://github.com/Harrypatria/Basic-to-Advanced-Tutorial-of-Network-Analytics-with-NetworkX/stargazers)
+**Connect on LinkedIn**: [![LinkedIn Follow](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harry-patria/)
+
+Click the buttons above to show your support!
+
+</div>
 
 ## References
 
