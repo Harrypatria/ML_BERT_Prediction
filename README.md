@@ -5,8 +5,6 @@
 ![Transformers](https://img.shields.io/badge/Transformers-4.12+-green.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)
 
-## Quick Demo
-
 <p align="center">
   <a href="https://www.youtube.com/watch?v=ExXTu0rgmX0">
     <img src="https://img.youtube.com/vi/ExXTu0rgmX0/maxresdefault.jpg" alt="ML BERT Prediction Demo" width="600"/>
