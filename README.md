@@ -1,4 +1,4 @@
-# Clinical Trials Classification System by Harry Patria
+# Clinical Trials Classification System by Dr. Harry Patria
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.9+-red.svg)
